@@ -109,8 +109,8 @@ nav ul li a:hover{
     ;
     border:1px solid white;
     margin-top:-7px;
-    background-image: linear-gradient(to top,black 90% ,rgb(61, 50, 50));
-
+    color:black;
+    background-image: linear-gradient(to top,black 10% ,white);
 }
 
 .padreImagenIndex{
@@ -248,11 +248,41 @@ nav ul li a:hover{
 
 }
 
+
+
 /*Listado Proyectos*/
 .foto-proyecto{
     height: 300px;
     width:100%;
+    opacity: 0.2;
+}
+
+.foto-proyecto:hover{
     border:1px solid white;
+    animation: change-image 3s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes change-image {
+    0%{
+        opacity:.5;
+        height:280px;
+        width:90%;
+    }
+
+    50%{
+        opacity: .75;
+    }
+
+
+    100%{
+        opacity: 1;
+        height:300px;
+        width:100%;
+
+    }
+    
 }
 
 .proyecto1{
@@ -298,6 +328,7 @@ nav ul li a:hover{
     border:2px solid white;
     padding:10px;
 
+
 }
 
 .ingresar-proyecto{
@@ -314,7 +345,7 @@ nav ul li a:hover{
 
 }
 
-.ingresar-proyecto:hover{
+/*.ingresar-proyecto:hover{
     display:block;
     width:190px;
     text-decoration:none;
@@ -326,6 +357,37 @@ nav ul li a:hover{
     text-align: center;
     margin:30px auto auto auto;
 }
+*/
+
+/*Animaciones*/
+
+.ingresar-proyecto:hover{
+    animation: change-button 2s;
+}
+
+@keyframes change-button{
+    0%{
+        width:80px;
+        color:black;
+        font-size: 5px;
+    }
+
+   50%{
+       width:120px;
+        font-size: 8px;
+        background-color: rgb(0, 0, 0);
+        color:grey;
+   }
+
+    75%{
+        width:190px;
+    }
+     
+
+
+}
+
+
 
 
 .tituloSeccionProyecto{
@@ -477,6 +539,9 @@ nav ul li a:hover{
     width: 400px;
     margin:70px;
     display:block;
+    transform: scale(1.1);
+    transition: all;
+    transition-duration: 1s;
 }
 
 .parrafoSobreMi{
@@ -526,6 +591,13 @@ input , textarea{
     border: 2px outset grey;
     color:black;
 }
+
+
+ input:focus,  textarea:focus {
+    width: 103%; 
+    transition: all 1s;       
+ }
+ 
 
 input[type="submit"]{
     width:50%;
@@ -605,6 +677,7 @@ input[type="submit"]:hover{
 }
 
 
+
 @media only screen and (max-width:700px){
 
     /*HEADER [GENERAL]*/
@@ -657,8 +730,8 @@ input[type="submit"]:hover{
         "parrafo"
         "botones"
         ;
-     
-        background-image: linear-gradient(to top,black 20% ,rgb(61, 50, 50));
+        color:white;
+        background-image: linear-gradient(black,grey) ;
     }
 
 
@@ -685,6 +758,8 @@ input[type="submit"]:hover{
         "proyecto4"
         ;
     }
+
+
 
     .proyecto1{
         margin-top:10px;
